@@ -1,0 +1,24 @@
+source 'https://rubygems.org'
+
+gem 'rails', '4.2.0.beta2'
+gem 'rails-api'
+gem 'active_model_serializers'
+gem 'sqlite3'
+gem 'bcrypt', '~> 3.1.2'
+
+gem 'puma'
+
+group :development do
+  platforms :mri do
+    gem 'byebug'
+  end
+  platforms :rbx do
+    gem 'rubinius-compiler'
+    gem 'rubinius-debugger'
+  end
+  gem 'guard-rspec', require: false
+end
+
+group :test, :development do
+  gem 'rspec-rails', '~> 3.0'
+end
